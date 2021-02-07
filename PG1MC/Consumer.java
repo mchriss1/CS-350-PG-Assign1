@@ -1,4 +1,7 @@
-/**Martez Christian
+/**Name: Martez Christian
+ * Course: CS 350-001
+ * Programming Assignment 1
+ * Date: 2/7/2021
  * Consumer.java
  *
  * This is the consumer thread for the bounded buffer problem.

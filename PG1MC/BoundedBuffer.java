@@ -1,4 +1,7 @@
-/**Martez Christian
+/**Name: Martez Christian
+ * Course: CS 350-001
+ * Programming Assignment 1
+ * Date: 2/7/2021
  * BoundedBuffer.java
  *
  * This program implements the bounded buffer using shared memory.
