@@ -38,6 +38,7 @@ public class Producer extends Thread
 
          // produce an item & enter it into the buffer
          message = new Date();
+         
          value = (int) (6000 + (50000 * Math.random()));
          System.out.println("Producer produced " + value + " " + message);
 

@@ -25,6 +25,7 @@ public class Consumer extends Thread
    public void run()
    {
    Date message;
+   int value;
 
      while (true)
       {
@@ -38,10 +39,11 @@ public class Consumer extends Thread
 
          // consume an item from the buffer
          System.out.println("Consumer wants to consume.");
-
+        
+         Object item = buffer.remove();
          message = (Date)buffer.remove();
-
-         System.out.println("Consumer consumed." + " " + message);
+            
+         System.out.println("Consumer consumed " + item + " " + message);
       }
    }
 
