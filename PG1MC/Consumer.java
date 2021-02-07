@@ -13,17 +13,7 @@ import java.util.*;
 
 public class Consumer extends Thread
 {
-   static int getValue(int n) 
-   { 
-       int value; 
- 
-       /* Single line that calculates sum */
-       for (value = 0; n > 0; value += n % 10,  n /= 10); 
- 
-       return value; 
-   } 
-
-
+   
    public Consumer(BoundedBuffer b)
    {
       buffer = b;
@@ -48,7 +38,7 @@ public class Consumer extends Thread
 
          message = (Date)buffer.remove();
 
-         System.out.println("Consumer consumed."+ (getValue(n)) + " " + message);
+         System.out.println("Consumer consumed." + " " + message);
       }
    }
 
