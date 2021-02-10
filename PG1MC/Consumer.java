@@ -13,6 +13,7 @@
  */
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Consumer extends Thread
 {
@@ -29,7 +30,7 @@ public class Consumer extends Thread
 
      while (true)
       {
-         int sleeptime = (int) (3 + (8 * Math.random()));
+         int sleeptime = ThreadLocalRandom.current().nextInt(3, 8 + 1); //(int) (3 + (8 * Math.random())) + 1;
          	//sleeptime is the number of seconds the consumer thread is going to sleep
 
          System.out.println("Consumer sleeping for " + sleeptime + " seconds");
@@ -39,11 +40,11 @@ public class Consumer extends Thread
 
          // consume an item from the buffer
          System.out.println("Consumer wants to consume.");
-        
-         Object item = buffer.remove();
+        value = (int) (6000 + (50000 * Math.random()));
+        // Object item = buffer.remove();
          message = (Date)buffer.remove();
             
-         System.out.println("Consumer consumed " + item + " " + message);
+         System.out.println("Consumer consumed " + value + " " + message);
       }
    }
 
