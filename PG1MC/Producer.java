@@ -19,14 +19,14 @@ public class Producer extends Thread
 {
    public Producer(String n, BoundedBuffer b) {
       buffer = b;
-      setName(n);
+      name = n;
    }
  
 
    public void run()
    {
    int message;
-   int value;
+   //int value;
    Random r = new Random();
    int low = 4;
    int high = 7;
@@ -39,7 +39,7 @@ public class Producer extends Thread
          	//sleeptime is the number of seconds the producer thread is going to sleep. 
             //in this case the sleep range is from 4 to 7
 
-         System.out.println("Producer " + getName() + " sleeping for " + sleeptime + " seconds");
+         System.out.println("Producer " + name + " sleeping for " + sleeptime + " seconds");
 
          try { sleep(sleeptime*1000); }
          catch(InterruptedException e) {}
@@ -48,11 +48,12 @@ public class Producer extends Thread
         // message = int;
          
          message = (int) (6000 + (50000 * Math.random()));
-         System.out.println("Producer " + getName() + " produced " + message);
+         System.out.println("Producer " + name + " produced " + message);
 
          buffer.enter(message);
       }
    }
 
    private  BoundedBuffer buffer;
+   private String name;
 }
