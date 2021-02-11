@@ -17,17 +17,20 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Producer extends Thread
 {
-   public Producer(BoundedBuffer b) {
+   public Producer(String n, BoundedBuffer b) {
       buffer = b;
+      setName(n);
    }
+ 
 
    public void run()
    {
-   Date message;
+   int message;
    int value;
    Random r = new Random();
    int low = 4;
    int high = 7;
+  
 
 
       while (true)
@@ -36,21 +39,20 @@ public class Producer extends Thread
          	//sleeptime is the number of seconds the producer thread is going to sleep. 
             //in this case the sleep range is from 4 to 7
 
-         System.out.println("Producer sleeping for " + sleeptime + " seconds");
+         System.out.println("Producer " + getName() + " sleeping for " + sleeptime + " seconds");
 
          try { sleep(sleeptime*1000); }
          catch(InterruptedException e) {}
 
          // produce an item & enter it into the buffer
-         message = new Date();
+        // message = int;
          
-         value = (int) (6000 + (50000 * Math.random()));
-         System.out.println("Producer produced " + value + " " + message);
+         message = (int) (6000 + (50000 * Math.random()));
+         System.out.println("Producer " + getName() + " produced " + message);
 
          buffer.enter(message);
       }
    }
 
    private  BoundedBuffer buffer;
-
 }

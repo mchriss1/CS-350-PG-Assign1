@@ -18,17 +18,17 @@ public class Server
 		BoundedBuffer server = new BoundedBuffer();
 		
       		// now create the producer and consumer threads
+			Producer John = new Producer("John", server);
+      		Producer Liz = new Producer("Liz", server);
+			
+			Consumer Mary = new Consumer("Mary", server);
+      		Consumer Bert = new Consumer("Bert", server);
+			
 
-      		Producer Liz = new Producer(server);
-			Producer John = new Producer(server);
+      		John.start();
+			Liz.start();
 
-      		Consumer Bert = new Consumer(server);
-			Consumer Mary = new Consumer(server);
-
-      		Liz.start();
-			John.start();
-
-      		Bert.start();
-			Mary.start();
+      		Mary.start();
+			Bert.start();
 	}//main
 }//class
