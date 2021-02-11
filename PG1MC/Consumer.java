@@ -23,13 +23,24 @@ public class Consumer extends Thread
       buffer = b;
       name = n;
    }
-   
+   //************************************************************************ */
+   /*public int sumOfDigits(int m) {
+      int sum = 0;
+      m = Math.abs(message);
 
+      while(m < 0 ) {
+         sum += m % 10;
+         m /= 10;
+
+      }
+      return sum;
+   }
+*///************************************************* */
    public void run()
    {
    int message;
    //int value;
-      int sum = 0;
+   int sum = 0;
    
      while (true)
       {
@@ -47,12 +58,8 @@ public class Consumer extends Thread
         //value = (int) (6000 + (50000 * Math.random()));
         // Object item = buffer.remove();
          message = (int)buffer.remove();
-           
-         while (sum){
-            sum += message % 10;
-            message /= 10;
-         }
-         System.out.println("Consumer " + name + " consumed " + message + ". Sum of its digits is : " + message);
+
+         System.out.println("Consumer " + name + " consumed " + message);
       }
    }
 

@@ -47,7 +47,7 @@ public class Producer extends Thread
          // produce an item & enter it into the buffer
         // message = int;
          
-         message = (int) (6000 + (50000 * Math.random()));
+         message = (int) (6000 + (50000 * Math.random() + 1));
          System.out.println("Producer " + name + " produced " + message);
 
          buffer.enter(message);
