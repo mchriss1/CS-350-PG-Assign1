@@ -40,11 +40,11 @@ public class Consumer extends Thread
 
          // consume an item from the buffer
          System.out.println("Consumer wants to consume.");
-        value = (int) (6000 + (50000 * Math.random()));
+        //value = (int) (6000 + (50000 * Math.random()));
         // Object item = buffer.remove();
          message = (Date)buffer.remove();
             
-         System.out.println("Consumer consumed " + value + " " + message);
+         System.out.println("Consumer consumed " + message);
       }
    }
 

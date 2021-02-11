@@ -16,15 +16,19 @@ public class Server
 {
 	public static void main(String args[]) {
 		BoundedBuffer server = new BoundedBuffer();
-
+		
       		// now create the producer and consumer threads
 
-      		Producer producerThread = new Producer(server);
+      		Producer Liz = new Producer(server);
+			Producer John = new Producer(server);
 
-      		Consumer consumerThread = new Consumer(server);
+      		Consumer Bert = new Consumer(server);
+			Consumer Mary = new Consumer(server);
 
-      		producerThread.start();
-      		consumerThread.start();
+      		Liz.start();
+			John.start();
 
+      		Bert.start();
+			Mary.start();
 	}//main
 }//class
