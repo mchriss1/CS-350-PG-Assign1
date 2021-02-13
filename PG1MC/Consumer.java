@@ -24,7 +24,7 @@ public class Consumer extends Thread
       name = n;
    }
    
-   public int sumOfDigits(int m) {
+   private int sumOfDigits(int m) {
       int sum = 0;
       
       while(m != 0 ) {
@@ -38,6 +38,7 @@ public class Consumer extends Thread
    public void run()
    {
    int message;
+   int variable;
    //int value;
   // int sum = 0;
    
@@ -57,16 +58,18 @@ public class Consumer extends Thread
         //value = (int) (6000 + (50000 * Math.random()));
         // Object item = buffer.remove();
 
-       /* while (sum < 0) {
+       /*while (sum < 0) {
          sum += message % 10;
          message /= 10;
       }*/
       message = (int)buffer.remove();
-      System.out.println("Consumer " + name + " consumed " + message + ". Sum of its digits is : " + sumOfDigits(message));
+      variable = sumOfDigits(message);
+      System.out.println("Consumer " + name + " consumed " + message + ". Sum of its digits is : " + variable);
         // message = (int)buffer.remove();
 
        //  System.out.println("Consumer " + name + " consumed " + message);
       }
+      
    }
 
    private  BoundedBuffer buffer;

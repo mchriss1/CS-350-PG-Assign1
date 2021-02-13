@@ -20,15 +20,12 @@ public class Server
       		// now create the producer and consumer threads
 			Producer John = new Producer("John", server);
 			Consumer Mary = new Consumer("Mary", server);
-
-      		Producer Liz = new Producer("Liz", server);
-			Consumer Bert = new Consumer("Bert", server);
-		
-
-      		John.start();
+			John.start();
 			Mary.start();
 
-      		Liz.start();
+			Producer Liz = new Producer("Liz", server);
+			Consumer Bert = new Consumer("Bert", server);
+			Liz.start();
 			Bert.start();
 	}//main
 }//class

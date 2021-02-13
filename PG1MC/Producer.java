@@ -35,7 +35,7 @@ public class Producer extends Thread
 
       while (true)
       {
-            int sleeptime = r.nextInt(high-low) + low; //int sleeptime = ThreadLocalRandom.current().nextInt(4, 7 + 1);//(int) (4 + (7 * Math.random())) + 1;
+            int sleeptime = r.nextInt(high-low) + low;                               //  (int) (Boundedbuffer.NAP_TIME * Math.random() + 4);                           //r.nextInt(high-low) + low; //int sleeptime = ThreadLocalRandom.current().nextInt(4, 7 + 1);//(int) (4 + (7 * Math.random())) + 1;
          	//sleeptime is the number of seconds the producer thread is going to sleep. 
             //in this case the sleep range is from 4 to 7
 
