@@ -39,12 +39,10 @@ public class Consumer extends Thread
    {
    int message;
    int variable;
-   //int value;
-  // int sum = 0;
    
      while (true)
       {
-         int sleeptime = ThreadLocalRandom.current().nextInt(3, 8 + 1); //(int) (3 + (8 * Math.random())) + 1;
+         int sleeptime = ThreadLocalRandom.current().nextInt(3, 8 + 1);
          	//sleeptime is the number of seconds the consumer thread is going to sleep
 
          System.out.println("Consumer " + name + " sleeping for " + sleeptime + " seconds");
@@ -55,16 +53,11 @@ public class Consumer extends Thread
 
          // consume an item from the buffer
          System.out.println("Consumer " + name + " wants to consume.");
-        //value = (int) (6000 + (50000 * Math.random()));
-        // Object item = buffer.remove();
 
-       /*while (sum < 0) {
-         sum += message % 10;
-         message /= 10;
-      }*/
-      message = (int)buffer.remove();
-      variable = sumOfDigits(message);
-      System.out.println("Consumer " + name + " consumed " + message + ". Sum of its digits is : " + variable);
+   
+         message = (int)buffer.remove();
+         variable = sumOfDigits(message);
+         System.out.println("Consumer " + name + " consumed " + message + ". Sum of its digits is : " + variable);
         // message = (int)buffer.remove();
 
        //  System.out.println("Consumer " + name + " consumed " + message);
